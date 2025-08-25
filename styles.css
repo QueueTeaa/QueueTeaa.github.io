@@ -2,21 +2,17 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x:hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   transition: background 0.5s ease;
-}
-
-.btn {
-  @apply w-60 py-4 px-6 text-xl font-semibold rounded-2xl shadow-lg transition transform;
-  transition: all 0.3s ease;
-}
-.btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  @apply shadow-2xl;
+  background: linear-gradient(135deg, #ffe4f0, #ffc0cb);
 }
 
 .btn-cute {
-  @apply font-semibold text-lg cursor-pointer transition-all duration-300;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
   background: linear-gradient(135deg, #ffb6c1, #ff69b4);
   color: white;
   border: none;
@@ -38,20 +34,36 @@ body {
 
 .hidden { display: none; }
 
-/* Theme toggle button */
-#themeToggle {
-  transition: all 0.3s ease;
+.text-pink-600 { cursor: pointer; }
+
+/* Hearts */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: fly 6s linear infinite;
+}
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+.heart:before { top: -10px; left: 0; }
+.heart:after { left: 10px; top: 0; }
+
+@keyframes fly {
+  0% { transform: translateY(100vh) scale(0) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-50vh) scale(1) rotate(45deg); opacity: 0; }
 }
 
-/* BW theme */
-body.bw {
-  filter: grayscale(100%) contrast(1.2);
-  background: #f0f0f0;
-}
+/* BW Theme */
+body.bw { filter: grayscale(100%) contrast(1.2); background: #f0f0f0; }
 body.bw #themeToggle { color: #ff69b4; }
 body:not(.bw) #themeToggle { color: black; }
-
-
-.btn-space{
-    margin-right: 20px;
-}
