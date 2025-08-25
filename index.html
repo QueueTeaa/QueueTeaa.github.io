@@ -243,7 +243,7 @@
                 <button class="text-pink-600 mt-4 back-btn" onclick="goBack()">⬅</button>
                 <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
             </div>
-        
+        </div>
     
 
         <!-- ORT DS -->
@@ -255,7 +255,7 @@
                 <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
             </div>
         </div>
-        
+
         <div id="ort-ds-informed" class="hidden max-w-2xl text-left">
             <p>NO ACTION NEEDED 🎀.</p>
             <div>
@@ -290,52 +290,45 @@
         </div>
 
         <!-- APT PS -->
-        <div id="apt-ps" class="hidden flex flex-col items-center max-w-2xl text-left">
-            <button class="btn-cute mb-4" onclick="showPage('apt-ps-assigned')">Assigned</button>
-            <button class="btn-cute mb-4" onclick="showPage('apt-ps-unassigned')">Unassigned</button>
-            <div>
-                <button class="text-pink-600 mt-4 back-btn" onclick="goBack()">⬅</button>
-                <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
-            </div>
-        </div>
-        <div id="apt-ps-assigned" class="hidden max-w-2xl text-left">
-            <p>If assigned → use troubleshooting plan template.</p>
-            <div>
-                <button class="text-pink-600 mt-4 back-btn" onclick="goBack()">⬅</button>
-                <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
-            </div>
-        </div>
-        <div id="apt-ps-unassigned" class="hidden max-w-2xl text-left">
-            <p>If unassigned → use troubleshooting plan template.</p>
+
+        <div id="apt-ps" class="hidden max-w-2xl text-left">
+            <p>            
+                <ul>
+                    <li>🎀 Action Plan.</li>
+                    <li>🎀 New.</li>
+                    <li>🎀 Responsible: SAP Product Support.</li>
+                    <li>🎀 State: Completed.</li>
+                    <li>🎀 Next status update: set it to 2-3 days.</li>
+                    <li>🎀 Check the "Customer Visible" checkbox.</li>
+                    <li>🎀 Template: At this early stage we can only create plan for what details we need to start the troubleshooting.
+                         We will put them in the next reply, with detailed description. <br>
+                         Based on these details We will be able to proceed further..</li>
+            </ul></p>
             <div>
                 <button class="text-pink-600 mt-4 back-btn" onclick="goBack()">⬅</button>
                 <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
             </div>
         </div>
 
+
         <!-- APT DS -->
-        <div id="apt-ds" class="hidden flex flex-col items-center max-w-2xl text-left">
-            <button class="btn-cute mb-4" onclick="showPage('apt-ds-assigned')">Assigned</button>
-            <button class="btn-cute mb-4" onclick="showPage('apt-ds-unassigned')">Unassigned</button>
+
+        <div id="apt-ds" class="hidden max-w-2xl text-left">
+            <p><ul>
+                    <li>🎀 Action Plan.</li>
+                    <li>🎀 New.</li>
+                    <li>🎀 Responsible: SAP development.</li>
+                    <li>🎀 State: Completed.</li>
+                    <li>🎀 Next status update: set it to 2-3 days.</li>
+                    <li>🎀 Check the "Customer Visible" checkbox.</li>
+                    <li>🎀 Template: The case has been forwarded to the development team and they are working on providing deep analysis.</li>
+            </ul></p>
             <div>
                 <button class="text-pink-600 mt-4 back-btn" onclick="goBack()">⬅</button>
                 <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
             </div>
         </div>
-        <div id="apt-ds-assigned" class="hidden max-w-2xl text-left">
-            <p>If assigned → use "forwarded to dev team" template.</p>
-            <div>
-                <button class="text-pink-600 mt-4 back-btn" onclick="goBack()">⬅</button>
-                <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
-            </div>
-        </div>
-        <div id="apt-ds-unassigned" class="hidden max-w-2xl text-left">
-            <p>If unassigned → use "forwarded to dev team" template.</p>
-            <div>
-                <button class="text-pink-600 mt-4 back-btn" onclick="goBack()">⬅</button>
-                <button class="text-pink-600 mt-2" onclick="goHome()">🏠</button>
-            </div>
-        </div>
+
 
     </div>
 
