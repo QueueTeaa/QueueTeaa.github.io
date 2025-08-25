@@ -63,7 +63,11 @@ body {
   100% { transform: translateY(-50vh) scale(1) rotate(45deg); opacity: 0; }
 }
 
-/* BW Theme */
-body.bw { filter: grayscale(100%) contrast(1.2); background: #f0f0f0; }
+/* Slightly colorful BW Theme */
+body.bw {
+  filter: grayscale(60%) contrast(1.2) hue-rotate(200deg) saturate(80%);
+  background: #e0e7f0; /* soft bluish background */
+}
+
 body.bw #themeToggle { color: #ff69b4; }
 body:not(.bw) #themeToggle { color: black; }
