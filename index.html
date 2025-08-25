@@ -1,11 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QueueTeaa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QM Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    test test
+<body class="bg-pink-50 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-4 bg-pink-200 shadow-md">
+    <h1 class="text-2xl font-bold text-pink-700" >🎀 QM Guide</h1>
+    <button id="themeToggle" class="font-bold py-2 px-4 rounded-lg text-black">BW Mode</button>
+  </nav>
+
+  <div class="container text-center mt-12 flex-grow">
+    <!-- Home -->
+    <div id="home">
+      <button class="btn btn-cute mb-6 btn-space" onclick="showPage('assigning')">Assigning VHs</button>
+      <button class="btn btn-cute btn-space" onclick="showPage('slas')">Meeting SLAs</button>
+    </div>
+
+    <!-- Assigning VHs -->
+    <div id="assigning" class="hidden">
+      <h2 class="text-2xl font-bold text-pink-700 mb-8">Assigning VHs</h2>
+      <button class="btn btn-cute mb-4 btn-space" onclick="showPage('assigning-ps')">PS</button>
+      <button class="btn btn-cute mb-4 btn-space" onclick="showPage('assigning-ds')">DS</button>
+      <br>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- Assigning PS -->
+    <div id="assigning-ps" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">Assigning VHs - PS</h2>
+      <button class="btn btn-cute mb-4 btn-space" onclick="showPage('assigning-ps-old')">Old VH</button>
+      <button class="btn btn-cute mb-4 btn-space" onclick="showPage('assigning-ps-new')">New VH</button>
+      <br>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- Old VH -->
+    <div id="assigning-ps-old" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">Old VHs - PS</h2>
+      <p class="mb-4">
+
+        <ul>
+            <li>- Copy the case number.</li>
+            <li>- Search in the excel sheet.</li>
+            <li>- look for previous processors.</li>
+            <li>- Check for their availability.</li>
+            <li>- If available: re-assign</li>
+            <li>- If chat support: re-assign.</li>
+            <li>- If not available: Look for available processor.</li>
+        </ul>
+      </p>
+      <button class="text-pink-600  mt-4" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- New VH -->
+    <div id="assigning-ps-new" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">New VHs - PS</h2>
+      <p class="mb-4">
+        <ul >
+            <li>- Find new available processor.</li>
+            <li>- Check Excel sheet for fair distribution.</li>
+            <li>- Check RCC availability.</li>
+            <li>- Assign in the ticket.</li>
+            <li>- Update Excel sheet.</li>
+            <li>- Inform team in MS Teams.</li>
+      </p>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- Assigning DS -->
+    <div id="assigning-ds" class="hidden">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">Assigning VHs - DS</h2>
+      <p>We do not assign DS VHs ✅</p>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- Meeting SLAs -->
+    <div id="slas" class="hidden">
+      <h2 class="text-2xl font-bold text-pink-700 mb-8">Meeting SLAs</h2>
+      <button class="btn btn-cute mb-4" onclick="showPage('irt')">IRT</button>
+      <button class="btn btn-cute mb-4" onclick="showPage('ort')">ORT</button>
+      <button class="btn btn-cute mb-4" onclick="showPage('apt')">APT</button>
+      <br>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- IRT -->
+    <div id="irt" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">IRT Rules</h2>
+      <button class="btn btn-cute mb-4" onclick="showPage('irt-ps')">PS</button>
+      <button class="btn btn-cute mb-4" onclick="showPage('irt-ds')">DS</button>
+      <br>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- IRT PS -->
+    <div id="irt-ps" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">IRT - PS</h2>
+      <button class="btn btn-cute mb-4" onclick="showPage('irt-ps-vh')">VH</button>
+      <button class="btn btn-cute mb-4" onclick="showPage('irt-ps-other')">High/Medium/Low</button>
+      <br>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- IRT PS VH -->
+    <div id="irt-ps-vh" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">IRT PS - VH</h2>
+      <p class="mb-4"><strong>Use VH template for Very High PS cases.</strong>
+    
+    Template here
+    
+    </p>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- IRT PS Other -->
+    <div id="irt-ps-other" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">IRT PS - High/Medium/Low</h2>
+      <p class="mb-4">
+        - If assigned → raise awareness.<br>
+        - If 5 min left & no reply → use escalation template.<br>
+        - If unassigned → 10 min before expiry → use processor assignment template.
+      </p>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- IRT DS -->
+    <div id="irt-ds" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">IRT - DS</h2>
+      <p>Use DS template.</p>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- ORT -->
+    <div id="ort" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">ORT Rules</h2>
+      <p class="mb-4"><strong>PS:</strong> Use ORT template.</p>
+      <p class="mb-4"><strong>DS:</strong>  
+        - If customer not informed → update with DEV template.<br>
+        - If already informed → no action needed.
+      </p>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+    <!-- APT -->
+    <div id="apt" class="hidden text-left max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-pink-700 mb-4">APT Rules</h2>
+      <p class="mb-4"><strong>PS:</strong> Use troubleshooting plan template.</p>
+      <p class="mb-4"><strong>DS:</strong> Use "forwarded to dev team" template.</p>
+      <button class="text-pink-600  mt-4 btn-space" onclick="showPage('assigning')">⬅</button>
+      <button class="text-pink-600  mt-2 btn-space" onclick="showPage('home')">🏠</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden;
+  transition: background 0.5s ease;
+}
+
+.btn {
+  @apply w-60 py-4 px-6 text-xl font-semibold rounded-2xl shadow-lg transition transform;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  @apply shadow-2xl;
+}
+
+.btn-cute {
+  @apply font-semibold text-lg cursor-pointer transition-all duration-300;
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 40px;
+  box-shadow: 0 8px 15px rgba(255,105,180,0.4);
+}
+
+.btn-cute:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, #ff69b4, #ff85c1);
+  box-shadow: 0 12px 25px rgba(255,105,180,0.5);
+}
+
+.btn-cute:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 5px 12px rgba(255,105,180,0.3);
+}
+
+.hidden { display: none; }
+
+/* Theme toggle button */
+#themeToggle {
+  transition: all 0.3s ease;
+}
+
+/* BW theme */
+body.bw {
+  filter: grayscale(100%) contrast(1.2);
+  background: #f0f0f0;
+}
+body.bw #themeToggle { color: #ff69b4; }
+body:not(.bw) #themeToggle { color: black; }
+
+
+.btn-space{
+    margin-right: 20px;
+}
